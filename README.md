@@ -85,8 +85,8 @@ This function must be like the following : `function(error, $mediaOutlet) { //so
 - error parameter provides information about the upload error (AJAX technical error)
 - $mediaOutlet is the HTML DOM used element  
 
-Examples
-========
+Usage example
+=============
 
 HTML
 ----
@@ -122,4 +122,35 @@ $('.media_outlet').mediaOutlet({
             console.log('error : ' + error);
         }
     });`
+```
+
+Upload script
+-------------
+
+This example provide a PHP script using the Symfony framework
+
+```php
+
+$request = $this->getRequest();
+        
+//Getting the file name and location in the custom headers
+$fileName = $request->headers->get('Uploaded-File-Name');
+$relativeMediaPath = $request->headers->get('Uploaded-File-Location');
+
+$filePath = $this->getUploadRootDir($relativeMediaPath) . '/' . $fileName;
+
+if ($request->isXmlHttpRequest())
+{
+    //Stores the uploaded file server side
+    file_put_contents(
+            $filePath,
+            file_get_contents('php://input')
+    );
+}
+
+$path = $this->container->get('templating.helper.assets')->getUrl($relativeMediaPath);
+//The upload script must return the absolute path of the uploaded media
+$response = new Response();
+$response->setContent($path);
+return $response;
 ```
