@@ -67,7 +67,7 @@ The authorized file types for upload mode. Following types can be used :
 The maximum size in bytes of an uploaded media. The default value is 10485760 bytes (10 megabytes)
 
 ### preview
-Specify if the media preview is display (true) or not (false)
+Specify if the media preview is displayed (true) or not (false)
 
 ### onSuccess
 Callback function which defines some stuff to do when the upload/media get by URL is done with success.
