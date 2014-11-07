@@ -130,7 +130,6 @@ Upload script
 This example provide a PHP script using the Symfony framework
 
 ```php
-
 $request = $this->getRequest();
         
 //Getting the file name and location in the custom headers
