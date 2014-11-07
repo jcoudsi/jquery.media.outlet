@@ -1,8 +1,23 @@
 # jQuery Media Outlet 1.0
 
-jQuery Media Outlet provides a simple interface to :
-- upload media in a specified directory
-- get media from an URL in order to display it in the page
+Features
+--------
+
+- Upload media in a specified directory
+- Get media from an URL in order to display it in the page
+- The input URL is checked by a regex and a message is displayed in case of error.
+- The supported media uploaded or called with their URL are displayed in a preview zone.
+
+- File types supported for upload mode :
+  - png
+  - gif
+  - jpg
+
+- Any media URL can be used, but the plugin display a preview only for these types :
+  - png
+  - gif
+  - jpg
+  - youtube video
 
 Requirements
 ------------
@@ -43,7 +58,7 @@ The attribute name of the used HTML element which specified the media file URL t
 The attribute name of the used HTML element which specified the image file URL to display when there isn't preview to display for the chosen media
 
 ### uploadedFileTypes
-The authorized file types. Following types can be used :
+The authorized file types for upload mode. Following types can be used :
 - png
 - gif
 - jpg
@@ -69,3 +84,44 @@ Callback function which defines some stuff to do when the upload fails.
 This function must be like the following : `onError(error, $mediaOutlet) { //some stuff }`
 - error parameter provides information about the upload error
 - $mediaOutlet is the HTML DOM used element  
+
+Examples
+========
+
+HTML
+----
+
+```html
+<div class="media_outlet" data-loadedMedia="[media file URL]" data-noPreviewImage="[image URL]" data-mediaFile="" ></div>`
+```
+The p
+
+Javascript
+----------
+
+```javascript
+$('.media_outlet').mediaOutlet({
+        urlService:url,
+        uploadDir:'media',
+        defaultMode:'upload',
+        loadedMedia:'data-loadedMedia',
+        noPreviewImage:'data-noPreviewImage',
+        onSuccess:function(result, $mediaOutlet)
+        {
+            //Custom code to store the media name or the media URL in a specified attribute of the HTML element used
+            //Then, this attribute can be read with Javascript 
+            if (result.mediaSelectionType === 'upload')
+            {
+                $mediaOutlet.attr('data-mediaFile', result.mediaName);
+            }
+            else if (result.mediaSelectionType === 'url')
+            {
+                $mediaOutlet.attr('data-mediaFile', result.mediaUrl);
+            }
+        },
+        onError:function(error)
+        {
+            console.log('error : ' + error);
+        }
+    });`
+```
