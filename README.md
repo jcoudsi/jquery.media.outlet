@@ -52,10 +52,10 @@ The default displayed mode. Authorized values are :
 - url
 
 ### loadedMedia
-The attribute name of the used HTML element which specified the media file URL to display when the plugin in display once the page is loaded.
+The attribute name of the used HTML element which specifies the media file URL to display when the plugin is loaded.
 
 ### noPreviewImage
-The attribute name of the used HTML element which specified the image file URL to display when there isn't preview to display for the chosen media
+The attribute name of the used HTML element which specified the image file URL to display when the chosen media can't be previewed.
 
 ### uploadedFileTypes
 The authorized file types for upload mode. Following types can be used :
