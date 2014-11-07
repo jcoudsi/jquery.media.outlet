@@ -81,8 +81,8 @@ This function must be like the following : `function(result, $mediaOutlet) { //s
 
 ### onError
 Callback function which defines some stuff to do when the upload fails.
-This function must be like the following : `onError(error, $mediaOutlet) { //some stuff }`
-- error parameter provides information about the upload error
+This function must be like the following : `function(error, $mediaOutlet) { //some stuff }`
+- error parameter provides information about the upload error (AJAX technical error)
 - $mediaOutlet is the HTML DOM used element  
 
 Examples
@@ -94,8 +94,6 @@ HTML
 ```html
 <div class="media_outlet" data-loadedMedia="[media file URL]" data-noPreviewImage="[image URL]" data-mediaFile="" ></div>`
 ```
-The p
-
 Javascript
 ----------
 
