@@ -10,4 +10,4 @@ jQuery Media Outlet provides a simple interface to :
 - Firefox 6.0+
 - Chrome 8.0+
 - Safari 6
-- Opera	Opera 11.0+
+- Opera 11.0+
