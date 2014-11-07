@@ -127,7 +127,7 @@ $('.media_outlet').mediaOutlet({
 Upload script
 -------------
 
-This example provide a PHP script using the Symfony framework
+This example provides a PHP script using the Symfony framework
 
 ```php
 $request = $this->getRequest();
