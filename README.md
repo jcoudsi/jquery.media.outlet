@@ -40,12 +40,6 @@ Turns an HTML element into a media outlet.
 Options
 -------
 
-### urlService (mandatory)
-The URL of the upload service (for example a PHP script)
-
-### uploadDir
-The name of the directory where the media will be uploaded on your server. If it'ns not specified, the file will be uploaded in the directory where the PHP upload script is executed.
-
 ### defaultMode
 The default displayed mode. Authorized values are :
 - upload (default value)
@@ -54,20 +48,17 @@ The default displayed mode. Authorized values are :
 ### loadedMedia
 The attribute name of the used HTML element which specifies the media file URL to display when the plugin is loaded.
 
-### noPreviewImage
-The attribute name of the used HTML element which specified the image file URL to display when the chosen media can't be previewed.
-
-### uploadedFileTypes
-The authorized file types for upload mode. Following types can be used :
-- png
-- gif
-- jpg
-
 ### maxFileSize
 The maximum size in bytes of an uploaded media. The default value is 10485760 bytes (10 megabytes)
 
-### preview
-Specify if the media preview is displayed (true) or not (false)
+### noPreviewImage
+The attribute name of the used HTML element which specified the image file URL to display when the chosen media can't be previewed.
+
+### onError
+Callback function which defines some stuff to do when the upload fails.
+This function must be like the following : `function(error, $mediaOutlet) { //some stuff }`
+- error parameter provides information about the upload error (AJAX technical error)
+- $mediaOutlet is the HTML DOM used element  
 
 ### onSuccess
 Callback function which defines some stuff to do when the upload/media get by URL is done with success.
@@ -79,11 +70,20 @@ This function must be like the following : `function(result, $mediaOutlet) { //s
   - mediaSelectionType : "url" or "upload" depending the chosen mode
 - $mediaOutlet is the HTML DOM used element  
 
-### onError
-Callback function which defines some stuff to do when the upload fails.
-This function must be like the following : `function(error, $mediaOutlet) { //some stuff }`
-- error parameter provides information about the upload error (AJAX technical error)
-- $mediaOutlet is the HTML DOM used element  
+### preview
+Specify if the media preview is displayed (true) or not (false)
+
+### uploadDir
+The name of the directory where the media will be uploaded on your server. If it'ns not specified, the file will be uploaded in the directory where the PHP upload script is executed.
+
+### uploadedFileTypes
+The authorized file types for upload mode. Following types can be used :
+- png
+- gif
+- jpg
+
+### urlService (mandatory)
+The URL of the upload service (for example a PHP script)
 
 Usage example
 =============
