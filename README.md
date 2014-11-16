@@ -74,7 +74,7 @@ This function must be like the following : `function(result, $mediaOutlet) { //s
 Specify if the media preview is displayed (true) or not (false)
 
 ### uploadDir
-The name of the directory where the media will be uploaded on your server. If it'ns not specified, the file will be uploaded in the directory where the PHP upload script is executed.
+The name of the directory where the media will be uploaded on your server. If it isn't specified, the file will be uploaded in the directory where the PHP upload script is executed.
 
 ### uploadedFileTypes
 The authorized file types for upload mode. Following types can be used :
