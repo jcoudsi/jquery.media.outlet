@@ -8,13 +8,13 @@ Features
 - The input URL is checked by a regex and a message is displayed in case of error.
 - The supported media uploaded or called with their URL are displayed in a preview zone.
 
-- File types supported for upload mode :
+- Default file types supported for upload mode :
   - png
   - gif
   - jpg
   - pdf
 
-- Any media URL can be used, but the plugin display a preview only for these types :
+- Any media URL can be used, but the plugin displays a preview only for these types :
   - png
   - gif
   - jpg
