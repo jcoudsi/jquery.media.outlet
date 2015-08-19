@@ -12,6 +12,7 @@ Features
   - png
   - gif
   - jpg
+  - pdf
 
 - Any media URL can be used, but the plugin display a preview only for these types :
   - png
