@@ -42,7 +42,7 @@
         //Gets optionnal user parameters instead of default parameters
         params = $.extend({
             uploadDir:null, //Default upload dir
-            uploadedFileTypes:'png, gif, jpg', //Authorized file types
+            uploadedFileTypes:'png, gif, jpg, pdf', //Authorized file types
             maxFileSize:10485760, //Max file size in bytes (10 megabytes)
             defaultMode:'upload', //Default mode to use
             preview:true, //Preview is activated
@@ -392,7 +392,7 @@
     {
         
         //Generates the preview zone
-        $mediaOutlet.append('<div class="media_outlet_media_preview"><div class="media_outlet_image_preview"><img src=""></div><div class="media_outlet_youtube_preview"><iframe width="300" height="200" src="" frameborder="0" allowfullscreen></iframe></div><div class="media_outlet_no_preview"><img src=""></div></div>');
+        $mediaOutlet.append('<div class="media_outlet_media_preview"><div class="media_outlet_image_preview"><img src=""></div><div class="media_outlet_youtube_preview"><iframe width="300" height="200" src="" frameborder="0" allowfullscreen></iframe></div><div class="media_outlet_no_preview"></div></div>');
            
         //Gets the media type of the preview source file contained in the custom attribute of the media outlet div DOM element, if it's specified
         if (params.loadedMedia)
